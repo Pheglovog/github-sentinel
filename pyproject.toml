@@ -1,0 +1,27 @@
+[project]
+name = "github-sentinel"
+version = "0.1.0"
+description = "GitHub Sentinel - AI Agent for monitoring GitHub repositories and generating reports"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.1.1",
+    "pygithub>=2.6.1",
+    "requests>=2.32.4",
+    "sqlalchemy>=2.0.41",
+    "click>=8.1.0",
+    "schedule>=1.2.0",
+    "jinja2>=3.1.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "httpx>=0.25.0",
+    "tabulate>=0.9.0",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.scripts]
+github-sentinel = "github_sentinel.cli.commands:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
