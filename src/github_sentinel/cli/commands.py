@@ -248,8 +248,9 @@ def analyze(ctx, repo, days):
             click.echo(f"Invalid repository format: {repo}. Use 'owner/repo' format.")
             sys.exit(1)
         
-        # Calculate date range
-        end_date = datetime.now()
+        # Calculate date range with timezone info
+        from datetime import timezone
+        end_date = datetime.now(timezone.utc)
         start_date = end_date - timedelta(days=days)
         
         click.echo(f"Analyzing {repo_name} activity from {start_date.date()} to {end_date.date()}...")
